@@ -1,0 +1,512 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "description": "Please add description",
+    "version": "0.1.0_inProgress",
+    "title": "NIRO"
+  },
+  "tags": [
+    {
+      "name": "Milestone"
+    }
+  ],
+  "paths": {
+    "/milestone": {
+      "post": {
+        "tags": [
+          "Milestone"
+        ],
+        "operationId": "milestoneCreate",
+        "summary": "create milestone",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/milestoneLite"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/milestone"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request\n\n",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrangeApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found\n\n",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrangeApiError"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Method Not Allowed\n\n",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrangeApiError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable entity\n\nBusiness error",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrangeApiError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error\n\n",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrangeApiError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable\n\n",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrangeApiError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Milestone"
+        ],
+        "operationId": "milestoneFind",
+        "summary": "find milestone",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/milestone"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request\n\n",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrangeApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found\n\n",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrangeApiError"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Method Not Allowed\n\n",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrangeApiError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable entity\n\nBusiness error",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrangeApiError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error\n\n",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrangeApiError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable\n\n",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrangeApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/milestone/{milestoneId}": {
+      "get": {
+        "tags": [
+          "Milestone"
+        ],
+        "operationId": "milestoneGet",
+        "summary": "get milestone",
+        "parameters": [
+          {
+            "name": "milestoneId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/milestone"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request\n\n",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrangeApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found\n\n",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrangeApiError"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Method Not Allowed\n\n",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrangeApiError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable entity\n\nBusiness error",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrangeApiError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error\n\n",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrangeApiError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable\n\n",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrangeApiError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Milestone"
+        ],
+        "operationId": "milestoneUpdate",
+        "summary": "update milestone",
+        "parameters": [
+          {
+            "name": "milestoneId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/milestone"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/milestone"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request\n\n",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrangeApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found\n\n",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrangeApiError"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Method Not Allowed\n\n",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrangeApiError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable entity\n\nBusiness error",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrangeApiError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error\n\n",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrangeApiError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable\n\n",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrangeApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "https://localhost:8888"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "milestone": {
+        "required": [
+          "id",
+          "status",
+          "datetime"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "status": {
+            "type": "string"
+          },
+          "datetime": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "milestoneLite": {
+        "required": [
+          "status",
+          "datetime"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "datetime": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "OrangeApiComponent": {
+        "description": "A component your service requires (other web service, database, etc) to be fully functional.  See [Orange Recommendation](https://recommendations.innov.intraorange/designing-orange-api/#status-path)",
+        "required": [
+          "status",
+          "name",
+          "version"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "description": "Component status ok | ko",
+            "$ref": "#/components/schemas/OrangeApiStatusValue"
+          },
+          "name": {
+            "description": "Component internal name.",
+            "type": "string"
+          },
+          "version": {
+            "description": "major.minor.patch see [semver.org](https://semver.org/) or G00R00C00",
+            "type": "string"
+          }
+        }
+      },
+      "OrangeApiError": {
+        "description": "See [Orange recommendation](https://recommendations.innov.intraorange/designing-orange-api/#error-format)",
+        "required": [
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "description": "An integer coding the error type. This is given to caller so he can translate them if required.",
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "description": "A short localized string that describes the error.",
+            "type": "string"
+          },
+          "description": {
+            "description": "(optional) A long localized error description if needed. It can contain precise information about which parameter is missing, or what are the identifier acceptable values.",
+            "type": "string"
+          },
+          "infoURL": {
+            "description": "(optional) A URL to online documentation that provides more information about the error.",
+            "type": "string"
+          }
+        }
+      },
+      "OrangeApiStatus": {
+        "description": "Reflect service or component health. See [Orange Recommendation](https://recommendations.innov.intraorange/designing-orange-api/#status-path)",
+        "required": [
+          "status",
+          "name",
+          "version"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "description": "Service status ok | ko",
+            "$ref": "#/components/schemas/OrangeApiStatusValue"
+          },
+          "name": {
+            "description": "Your service internal name.",
+            "type": "string"
+          },
+          "version": {
+            "description": "major.minor.patch see [semver.org](https://semver.org/) or G00R00C00",
+            "type": "string"
+          },
+          "components": {
+            "description": "Each array entry represents a component your service requires (other web service, database, etc) to be fully functional",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrangeApiComponent"
+            }
+          }
+        }
+      },
+      "OrangeApiStatusValue": {
+        "description": "status ok | ko.  See [Orange Recommendation](https://recommendations.innov.intraorange/designing-orange-api/#status-path)",
+        "type": "string",
+        "enum": [
+          "ok",
+          "ko"
+        ]
+      }
+    }
+  }
+}
